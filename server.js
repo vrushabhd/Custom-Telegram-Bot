@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
 const fetch = require("node-fetch");
-const newapiOrgKey = process.env.NEWSAPIORGKEY;
+const newapiOrgKey = '4975058b5bb54c5d977fb57515cb8b0b';
 const meaningCloudApiKey = process.env.MEANINGCLOUDAPIKEY;
 const bot = new telegraf(process.env.TELEGRAPHKEY);
 app.use(bodyParser.json());
