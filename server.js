@@ -197,6 +197,21 @@ bot.hears('hey',(ctx)=>{
                             })
                           })
                         })
+                        bot.hears('Corona',(ctx,req,res)=>{
+                            fetch(`https://cryptic-ravine-96718.herokuapp.com/`)
+                            .then(res=>res.json())
+                            .then((json)=>{
+                            const url=json.news[1].link
+                            
+                            fetch(`https://api.meaningcloud.com/summarization-1.0?key=${meaningCloudApiKey}&url=${url}&sentences=3`, { method: 'POST'})
+                                .then(res => res.json())
+                                .then((summary) => {
+                                  ctx.reply(json.news[1].title)
+                                  ctx.reply(summary.summary)
+                                  ctx.reply(json.news[1].link)
+                                })
+                              })
+                            })
                         
                         bot.hears('COVID',(ctx,req,res)=>{
                         fetch(`https://cryptic-ravine-96718.herokuapp.com/`)
