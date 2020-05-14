@@ -6,8 +6,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const fetch = require("node-fetch");
 const newapiOrgKey = '4975058b5bb54c5d977fb57515cb8b0b';
-const meaningCloudApiKey = process.env.MEANINGCLOUDAPIKEY;
-const bot = new telegraf(process.env.TELEGRAPHKEY);
+const meaningCloudApiKey = "a53adc32d7acedb06d69be06a71bb05d";
+const bot = new telegraf('1122030679:AAHXTdXDIXIz9DTzVoIto0CBXDNaiwACxsI');
 app.use(bodyParser.json());
 bot.start((ctx) => ctx.reply("Hello your are talking to Delta Bot!, News services have evolved a lot.  It's so boring to sit down and read lengthy news articles. I perform text analysis to deliver crisp news straight to your inbox. Explore and stay updated. 1. Text me 'technology' for tech genre. 2. 'business' for some busines news. 3. and 'science' for some scientific dose. 4.COVID19 for covid19 related news and stats. /help for recieving these guidelines again, anytime."));
 bot.hears('/help', (ctx) => {
